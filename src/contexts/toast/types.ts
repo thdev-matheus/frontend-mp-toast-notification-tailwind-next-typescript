@@ -35,5 +35,13 @@ export interface IToastContext {
 }
 
 export interface IToastProviderProps {
+  position?:
+    | "top-left"
+    | "top-center"
+    | "top-right"
+    | "bottom-left"
+    | "bottom-center"
+    | "bottom-right";
+  autoClose?: number;
   children: ReactNode;
 }

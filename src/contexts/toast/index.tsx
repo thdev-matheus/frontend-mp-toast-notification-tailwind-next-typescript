@@ -12,7 +12,11 @@ export function useToast() {
   return context;
 }
 
-export default function ToastProvider({ children }: T.IToastProviderProps) {
+export default function ToastProvider({
+  children,
+  autoClose: aClose = 3000,
+  position: pos = "top-center",
+}: T.IToastProviderProps) {
   const [position, setPosition] = useState<
     | "top-left"
     | "top-center"
@@ -20,9 +24,11 @@ export default function ToastProvider({ children }: T.IToastProviderProps) {
     | "bottom-left"
     | "bottom-center"
     | "bottom-right"
-  >("top-center");
-  const [autoClose, setAutoClose] = useState(3000);
-  const [messages, setMessages] = useState<T.IMesssage[]>([]);
+  >(pos);
+  const [autoClose, setAutoClose] = useState(aClose);
+  const [messages, setMessages] = useState<T.IMesssage[]>([
+    { id: "sdfsdfsdfsdfsd", message: "toast de teste", type: "success" },
+  ]);
 
   const removeToast = (id: string) => {
     const newMessages = messages.filter((message) => message.id !== id);
