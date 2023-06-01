@@ -13,8 +13,14 @@ export function useToast() {
 }
 
 export default function ToastProvider({ children }: T.IToastProviderProps) {
-  const [hAlign, setHAlign] = useState<"left" | "center" | "right">("center");
-  const [vAlign, setVAlign] = useState<"top" | "bottom">("top");
+  const [position, setPosition] = useState<
+    | "top-left"
+    | "top-center"
+    | "top-right"
+    | "bottom-left"
+    | "bottom-center"
+    | "bottom-right"
+  >("top-center");
   const [autoClose, setAutoClose] = useState(3000);
   const [messages, setMessages] = useState<T.IMesssage[]>([]);
 
@@ -69,10 +75,8 @@ export default function ToastProvider({ children }: T.IToastProviderProps) {
   return (
     <ToastContext.Provider
       value={{
-        vAlign,
-        hAlign,
-        setHAlign,
-        setVAlign,
+        position,
+        setPosition,
         setAutoClose,
         toast,
         removeToast,

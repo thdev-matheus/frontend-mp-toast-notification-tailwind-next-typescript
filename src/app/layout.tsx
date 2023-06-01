@@ -1,4 +1,4 @@
-import "@/styles/main.css";
+import "./main.css";
 import ToastProvider from "@/contexts/toast";
 import { Inter } from "next/font/google";
 

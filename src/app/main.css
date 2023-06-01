@@ -30,3 +30,14 @@ body {
 /* body::-webkit-scrollbar {
   display: none;
 } */
+
+@layer components {
+}
+
+@layer base {
+
+}
+
+@layer utilities {
+  
+}

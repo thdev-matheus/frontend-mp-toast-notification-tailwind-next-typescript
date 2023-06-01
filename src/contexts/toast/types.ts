@@ -7,10 +7,23 @@ export interface IMesssage {
 }
 
 export interface IToastContext {
-  vAlign: "top" | "bottom";
-  setVAlign: Dispatch<SetStateAction<"top" | "bottom">>;
-  hAlign: "left" | "center" | "right";
-  setHAlign: Dispatch<SetStateAction<"left" | "center" | "right">>;
+  position:
+    | "top-left"
+    | "top-center"
+    | "top-right"
+    | "bottom-left"
+    | "bottom-center"
+    | "bottom-right";
+  setPosition: Dispatch<
+    SetStateAction<
+      | "top-left"
+      | "top-center"
+      | "top-right"
+      | "bottom-left"
+      | "bottom-center"
+      | "bottom-right"
+    >
+  >;
   setAutoClose: Dispatch<SetStateAction<number>>;
   toast: {
     success: (message: string) => void;

@@ -1,3 +1,3 @@
-import ToastContainer from "./toastContainer";
+import ToastForm from "./toastForm";
 
-export { ToastContainer };
+export { ToastForm };
