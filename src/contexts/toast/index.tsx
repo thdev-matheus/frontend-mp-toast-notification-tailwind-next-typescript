@@ -3,26 +3,19 @@
 import * as T from "./types";
 import { v4 as uuid } from "uuid";
 import { useState, useContext, createContext } from "react";
-import Container from "./components/container";
 
-const ToastContainerContext = createContext<T.IToastContainerContext>(
-  {} as T.IToastContainerContext
-);
+const ToastContext = createContext<T.IToastContext>({} as T.IToastContext);
 
-export function useToastContainer() {
-  const context = useContext(ToastContainerContext);
+export function useToast() {
+  const context = useContext(ToastContext);
 
   return context;
 }
 
-export default function ToastContainer({
-  children,
-  horizontalAlign = "center",
-  verticalAlign = "top",
-  autoClose = 3000,
-}: T.IToastContainerProps) {
-  const [hAlign, setHAlign] = useState(horizontalAlign);
-  const [vAlign, setVAlign] = useState(verticalAlign);
+export default function ToastProvider({ children }: T.IToastProviderProps) {
+  const [hAlign, setHAlign] = useState<"left" | "center" | "right">("center");
+  const [vAlign, setVAlign] = useState<"top" | "bottom">("top");
+  const [autoClose, setAutoClose] = useState(3000);
   const [messages, setMessages] = useState<T.IMesssage[]>([]);
 
   const removeToast = (id: string) => {
@@ -74,15 +67,19 @@ export default function ToastContainer({
   };
 
   return (
-    <ToastContainerContext.Provider
-      value={{ setHAlign, setVAlign, toast, removeToast }}
+    <ToastContext.Provider
+      value={{
+        vAlign,
+        hAlign,
+        setHAlign,
+        setVAlign,
+        setAutoClose,
+        toast,
+        removeToast,
+        messages,
+      }}
     >
-      <Container
-        horizontalAlign={hAlign}
-        verticalAlign={vAlign}
-        messages={messages}
-      />
       {children}
-    </ToastContainerContext.Provider>
+    </ToastContext.Provider>
   );
 }

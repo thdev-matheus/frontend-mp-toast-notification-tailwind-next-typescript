@@ -6,20 +6,21 @@ export interface IMesssage {
   message: string;
 }
 
-export interface IToastContainerContext {
-  setHAlign: Dispatch<SetStateAction<"left" | "center" | "right">>;
+export interface IToastContext {
+  vAlign: "top" | "bottom";
   setVAlign: Dispatch<SetStateAction<"top" | "bottom">>;
+  hAlign: "left" | "center" | "right";
+  setHAlign: Dispatch<SetStateAction<"left" | "center" | "right">>;
+  setAutoClose: Dispatch<SetStateAction<number>>;
   toast: {
     success: (message: string) => void;
     error: (message: string) => void;
     warning: (message: string) => void;
   };
   removeToast: (id: string) => void;
+  messages: IMesssage[];
 }
 
-export interface IToastContainerProps {
-  horizontalAlign?: "left" | "center" | "right";
-  verticalAlign?: "top" | "bottom";
-  autoClose?: number;
+export interface IToastProviderProps {
   children: ReactNode;
 }

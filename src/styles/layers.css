@@ -1,0 +1,26 @@
+@tailwind utilities;
+@tailwind base;
+@tailwind components;
+
+@layer components {
+  .toast-container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+  }
+  
+}
+
+@layer base {
+
+}
+
+@layer utilities {
+  .toast-container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+  }
+}

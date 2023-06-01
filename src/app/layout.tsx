@@ -1,5 +1,5 @@
 import "@/styles/main.css";
-import ToastContainer from "@/contexts/toastContainer";
+import ToastProvider from "@/contexts/toast";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,9 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>
-        <ToastContainer>{children}</ToastContainer>
-      </body>
+      <ToastProvider>
+        <body className={inter.className}>{children}</body>
+      </ToastProvider>
     </html>
   );
 }
