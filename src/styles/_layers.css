@@ -1,0 +1,21 @@
+@tailwind utilities;
+@tailwind base;
+@tailwind components;
+
+@layer components {
+  .title {
+    font-size: 30pt;
+    font-weight: bold;
+
+    line-height: 0.8;
+    white-space: nowrap;
+  }
+}
+
+@layer base {
+
+}
+
+@layer utilities {
+  
+}
