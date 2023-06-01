@@ -14,6 +14,7 @@ export interface IToastContainerContext {
     error: (message: string) => void;
     warning: (message: string) => void;
   };
+  removeToast: (id: string) => void;
 }
 
 export interface IToastContainerProps {

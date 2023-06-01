@@ -1,7 +1,9 @@
+"use client";
+
 import * as T from "./types";
-import * as B from "@/blocks";
 import { v4 as uuid } from "uuid";
 import { useState, useContext, createContext } from "react";
+import Container from "./components/container";
 
 const ToastContainerContext = createContext<T.IToastContainerContext>(
   {} as T.IToastContainerContext
@@ -72,8 +74,14 @@ export default function ToastContainer({
   };
 
   return (
-    <ToastContainerContext.Provider value={{ setHAlign, setVAlign, toast }}>
-      <B.ToastContainerBlock horizontalAlign={hAlign} verticalAlign={vAlign} />
+    <ToastContainerContext.Provider
+      value={{ setHAlign, setVAlign, toast, removeToast }}
+    >
+      <Container
+        horizontalAlign={hAlign}
+        verticalAlign={vAlign}
+        messages={messages}
+      />
       {children}
     </ToastContainerContext.Provider>
   );
