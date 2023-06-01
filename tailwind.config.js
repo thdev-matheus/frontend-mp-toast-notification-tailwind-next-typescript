@@ -8,16 +8,16 @@ module.exports = {
   theme: {
     extend: {
       textColor: {
-        "button-color-primary": "text-gray-800",
-        "button-color-secondary": "text-gray-800",
-        "button-hover-color-primary": "text-gray-800",
-        "button-hover-color-secondary": "text-gray-800",
+        "button-color-primary": "#1F2937",
+        "button-color-secondary": "#1F2937",
+        "button-hover-color-primary": "#1F2937",
+        "button-hover-color-secondary": "#1F2937",
       },
       backgroundColor: {
-        "button-background-color-primary": "bg-green-300",
-        "button-background-color-secondary": "bg-green-300",
-        "button-hover-background-color-primary": "bg-green-500",
-        "button-hover-background-color-secondary": "bg-green-500",
+        "button-background-color-primary": "#86EFAC",
+        "button-background-color-secondary": "#86EFAC",
+        "button-hover-background-color-primary": "rgb(74, 222, 128)",
+        "button-hover-background-color-secondary": "rgb(74, 222, 128)",
       },
     },
   },

@@ -1,7 +1,13 @@
+import * as C from "@/components";
+
 export default function Home() {
   return (
     <section className="flex items-center justify-center w-full h-full ">
-      <h1 className="title">Home</h1>
+      <div>
+        <C.Button>
+          <small className="font-bold">Mostrar Notificação</small>
+        </C.Button>
+      </div>
     </section>
   );
 }
