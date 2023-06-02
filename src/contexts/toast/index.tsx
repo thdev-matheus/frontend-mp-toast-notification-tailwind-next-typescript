@@ -2,7 +2,7 @@
 
 import * as T from "./types";
 import { v4 as uuid } from "uuid";
-import { useState, useContext, createContext } from "react";
+import { useState, useContext, createContext, useEffect } from "react";
 
 const ToastContext = createContext<T.IToastContext>({} as T.IToastContext);
 
@@ -24,11 +24,19 @@ export default function ToastProvider({
     | "bottom-left"
     | "bottom-center"
     | "bottom-right"
-  >(pos);
+  >("top-center");
   const [autoClose, setAutoClose] = useState(aClose);
   const [messages, setMessages] = useState<T.IMesssage[]>([
-    { id: "sdfsdfsdfsdfsd", message: "toast de teste", type: "success" },
+    {
+      id: "sdfsdfsdfsdfsd",
+      message: "toast de teste com um texto grandinho",
+      type: "success",
+    },
   ]);
+
+  useEffect(() => {
+    setPosition(pos);
+  }, [pos]);
 
   const removeToast = (id: string) => {
     const newMessages = messages.filter((message) => message.id !== id);
