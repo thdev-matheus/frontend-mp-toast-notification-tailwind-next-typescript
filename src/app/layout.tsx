@@ -16,9 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <ToastProvider>
-        <body className={inter.className}>{children}</body>
-      </ToastProvider>
+      <body className={inter.className}>
+        <ToastProvider position="top-left">{children}</ToastProvider>
+      </body>
     </html>
   );
 }

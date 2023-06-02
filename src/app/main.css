@@ -22,16 +22,110 @@ body {
   justify-content: flex-start;
   align-items: center;
 
-  /* overflow: hidden auto; */
+  overflow: hidden auto;
 
   background-color: #1F2937;
 }
 
-/* body::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
-} */
+}
 
 @layer components {
+  .top-left {
+    display: flex;
+    flex-direction: column;
+
+    justify-self: flex-start;
+    align-self: flex-start;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: .5rem 0 0 .5rem;
+
+    position: fixed;
+    z-index: 50;
+  }
+
+  .top-center {
+    display: flex;
+    flex-direction: column;
+
+    justify-self: center;
+    align-self: flex-start;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    padding-top: .5rem;
+
+    position: fixed;
+    z-index: 50;
+  }
+
+  .top-right {
+    display: flex;
+    flex-direction: column;
+
+    justify-self: flex-end;
+    align-self: flex-start;
+
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    padding: .5rem .5rem 0 0;
+
+    position: fixed;
+    z-index: 50;
+  }
+
+  .bottom-left {
+    display: flex;
+    flex-direction: column-reverse;
+
+    justify-self: flex-start;
+    align-self: flex-end;
+
+    padding: 0 0 .5rem .5rem;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    position: fixed;
+    z-index: 50;
+  }
+
+  .bottom-center {
+    display: flex;
+    flex-direction: column-reverse;
+
+    justify-self: center;
+    align-self: flex-end;
+
+    padding-bottom: .5rem;
+
+    align-items: center;
+
+    position: fixed;
+    z-index: 50;
+  }
+
+  .bottom-right {
+    display: flex;
+    flex-direction: column-reverse;
+
+    justify-self: flex-end;
+    align-self: flex-end;
+
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    padding: 0 .5rem .5rem 0;
+
+    position: fixed;
+    z-index: 50;
+  }
 }
 
 @layer base {
